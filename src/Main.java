@@ -4,25 +4,53 @@ public class Main {
 
     public static void main(String[] args) {
 
-        // НИЖЧЕ ПРИКЛАД КОДУ, ВИКОРИСТОВУЙТЕ ЙОГО ЯК ЗРАЗОК,
-        // АЛЕ САМ ПРИКЛАД МОЖНА ВИДАЛИТИ ПОТІМ
-        // Приклад сканнера для перехоплення вводу користувача з консолі
-        System.out.println("Привіт, відважний герою!");
-        System.out.println("Тебе чекає цікава подорож");
-        System.out.println("Ти йшов чарівною стежкою, і натрапив на роздоріжжя: 1 - піти наліво, 2 - піти направо");
+        System.out.println("Hello brave hero!!");
+        System.out.println("You have found yourself in a magical forest and many interesting adventures await you!");
+        System.out.println("I wish you success and a safe journey!");
         Scanner sc = new Scanner(System.in);
-        // Таким чином можна отримати цифру яку ввів користувач
-        // і зберегти її в змінну типу int
-        int choice1 = sc.nextInt();
-        if (choice1 == 1) {
-            System.out.println("Ти обрав піти наліво");
-            // відняти очки здоров*я
-        } else if (choice1 == 2) {
-            System.out.println("Ти обрав піти направо");
-            // додати очки удачі
+
+        int health = 100;
+        int luck = 50;
+
+        System.out.println("Event1 :Crossroads");
+        System.out.println("You were walking along a magical path and came across a crossroads: 1 - Go left, 2 - Go right. Please choose a direction.");
+
+        int crossroads = sc.nextInt();
+        if (crossroads == 1) {
+            System.out.println("You chose to go left and lost 20 health points.");
+            health -= 20;
+            System.out.println("Your health:  " + health);
+        }
+        else if (crossroads == 2) {
+            System.out.println("You chose to go right! Congratulations! You found the treasure and received 30 luck points!");
+            luck += 30;
+            System.out.println("Your luck: " + luck);
         } else {
-            System.out.println("Ти заплутався");
-            // відняти очки здоров*я
+            System.out.println("You got confused and lost 10 health points.");
+            health -= 10;
+            System.out.println("Your health:  " + health);
+        }
+
+        System.out.println("Event 2:Mysterious well");
+        System.out.println("Wow! You've stumbled upon a magic well!");
+        System.out.println("You have to make a choice again!");
+        System.out.println(" 1 - I will drink water from the well.");
+        System.out.println(" 2 - I will ignore the well because I'm not sure about the water quality.");
+
+        int myChoice = sc.nextInt();
+        if (myChoice == 1) {
+            System.out.println("Congratulations! Magical water gives you 50 health points!");
+            health += 50;
+            System.out.println("Your health:  " + health);
+        } else if (myChoice == 2) {
+            System.out.println("Unfortunately, you are tired, so you lose 10 luck points!");
+            luck -= 10;
+            System.out.println("Your luck: " + luck);
+        } else {
+            System.out.println("Your points remain unchanged. Continue on your way.");
+        }
+
+
         }
         // КІНЕЦЬ ПРИКЛАДУ, ВИДАЛІТЬ ПРИКЛАД, ЩОБ В КОДІ БУЛО ТІЛЬКИ ВАШЕ РІШЕННЯ
 
@@ -34,4 +62,4 @@ public class Main {
 
     }
 
-}
+
