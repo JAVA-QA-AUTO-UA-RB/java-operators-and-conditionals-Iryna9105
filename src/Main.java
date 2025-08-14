@@ -12,7 +12,7 @@ public class Main {
         int health = 100;
         int luck = 50;
 
-        System.out.println("Event1 :Crossroads");
+        System.out.println("Event 1: Crossroads");
         System.out.println("You were walking along a magical path and came across a crossroads: 1 - Go left, 2 - Go right. Please choose a direction.");
 
         int crossroads = sc.nextInt();
@@ -20,8 +20,7 @@ public class Main {
             System.out.println("You chose to go left and lost 20 health points.");
             health -= 20;
             System.out.println("Your health:  " + health);
-        }
-        else if (crossroads == 2) {
+        } else if (crossroads == 2) {
             System.out.println("You chose to go right! Congratulations! You found the treasure and received 30 luck points!");
             luck += 30;
             System.out.println("Your luck: " + luck);
@@ -31,7 +30,7 @@ public class Main {
             System.out.println("Your health:  " + health);
         }
 
-        System.out.println("Event 2:Mysterious well");
+        System.out.println("Event 2: Magical well");
         System.out.println("Wow! You've stumbled upon a magic well!");
         System.out.println("You have to make a choice again!");
         System.out.println(" 1 - I will drink water from the well.");
@@ -49,17 +48,35 @@ public class Main {
         } else {
             System.out.println("Your points remain unchanged. Continue on your way.");
         }
+        System.out.println("Event 3: Magical creature");
+        System.out.println("You met a magical creature. What is it?");
+        System.out.println("1 - Friendly!");
+        System.out.println("2 - Hostile!");
+        System.out.println("3 - Indifferent!");
 
-
+        int myMagicalCreature = sc.nextInt();
+        if (myMagicalCreature == 1) {
+            System.out.println("Your creature turned out to be friendly and shared its food with you! You gained 20 health points!");
+            health += 20;
+            System.out.println("Your health: " + health);
+        } else if (myMagicalCreature == 2) {
+            System.out.println("Your creature turned out to be hostile and attacked! You lost 30 health points.");
+            health -= 30;
+            System.out.println("Your health: " + health);
+        } else {
+            System.out.println("Your creature is indifferent. The number of your points remains the same!");
         }
-        // КІНЕЦЬ ПРИКЛАДУ, ВИДАЛІТЬ ПРИКЛАД, ЩОБ В КОДІ БУЛО ТІЛЬКИ ВАШЕ РІШЕННЯ
+        System.out.println("Your points: ");
+        System.out.println("Your health: " + health);
+        System.out.println("Your luck: " + luck);
 
-
-
-        // Нижче пишіть ваш код з реалізацією завдання
-        // Коли пишете логіку гри - не забувайте періодично запускати програму
-        // І переконуватись, що все працює як треба, заодно тестуйте її перебираючи інпути
-
+        if (health <= 0 || luck <= 0) {
+            System.out.println("You couldn't get through the forest...Try again!");
+        } else {
+            System.out.println("Congratulations! You were able to walk through the magical forest!");
+        }
+        sc.close();
     }
+}
 
 
